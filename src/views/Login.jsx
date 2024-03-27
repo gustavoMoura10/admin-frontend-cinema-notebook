@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import { useState } from "react";
 import AxiosHelper from "../config/AxiosHelper";
-import "../style/Login.css";
+import "../style/views/Login.css";
 import { useNavigate } from "react-router-dom";
 import { useAtom } from "jotai";
 import { userAtom } from "../states";
@@ -10,7 +10,7 @@ export default function Login() {
   const [userLogin, setUserLogin] = useAtom(userAtom);
   const [user, setUser] = useState({
     login: "",
-    password: ""
+    password: "",
   });
   async function doLogin(e) {
     e.preventDefault();
@@ -29,7 +29,7 @@ export default function Login() {
             onChange={(e) => {
               setUser({
                 ...user,
-                login: e.target.value
+                login: e.target.value,
               });
             }}
             type="text"
@@ -44,7 +44,7 @@ export default function Login() {
             onChange={(e) => {
               setUser({
                 ...user,
-                password: e.target.value
+                password: e.target.value,
               });
             }}
             type="password"
